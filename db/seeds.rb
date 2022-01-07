@@ -17,3 +17,6 @@ mystery = Category.create(name: "Mystery")
 scifi = Category.create(name: "SciFi")
 
 Book.create(title: "The Couple Next Door", author: "Shari Lapena", description: "A couple's baby is kidnapped while at a dinner party", category_id: mystery.id)
+
+Category.destroy_all
+Book.destroy_all
