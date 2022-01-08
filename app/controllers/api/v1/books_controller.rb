@@ -6,5 +6,6 @@ class Api::V1::BooksController < ApplicationController
     end
 
     def create
+        book = Book.new(book_params)
     end
 end
