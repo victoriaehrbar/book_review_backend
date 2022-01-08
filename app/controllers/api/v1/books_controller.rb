@@ -7,5 +7,16 @@ class Api::V1::BooksController < ApplicationController
 
     def create
         book = Book.new(book_params)
+        if book.save
+            render json: book, status: :accepted
+        else
+            render json: {errors: book.errors.full_messages}, status: :unprocessible_entity
+        end
+    end
+
+    private
+
+    def book_params
+        params.require(:book).permit(:title, :author, :description, :category_id)
     end
 end
