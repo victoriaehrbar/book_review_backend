@@ -14,6 +14,9 @@ class Api::V1::BooksController < ApplicationController
         end
     end
 
+    def destroy
+    end
+
     private
 
     def book_params
