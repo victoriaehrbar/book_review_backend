@@ -14,7 +14,10 @@ class Api::V1::BooksController < ApplicationController
         end
     end
 
-    def destroy
+    def destroy   
+        book = Book.find_by_id(params[:id])
+        book.destroy
+        render json: book 
     end
 
     private
