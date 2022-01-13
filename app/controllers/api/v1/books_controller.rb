@@ -14,6 +14,11 @@ class Api::V1::BooksController < ApplicationController
         end
     end
 
+    def show
+        book = Book.find(params[:id])
+        render json: BookSerializer.new(book)
+      end
+
     def destroy   
         book = Book.find_by_id(params[:id])
         book.destroy
